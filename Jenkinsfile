@@ -59,7 +59,7 @@ stages {
 stage('Deploiement en dev'){
         environment
         {
-        KUBECONFIG = credentials("cinfig") // we retrieve  kubeconfig from secret file called config saved on jenkins
+        KUBECONFIG = credentials("config") // we retrieve  kubeconfig from secret file called config saved on jenkins
         }
             steps {
                 script {
@@ -80,7 +80,7 @@ stage('Deploiement en dev'){
 stage('Deploiement en staging'){
         environment
         {
-        KUBECONFIG = credentials("cinfig") // we retrieve  kubeconfig from secret file called config saved on jenkins
+        KUBECONFIG = credentials("config") // we retrieve  kubeconfig from secret file called config saved on jenkins
         }
             steps {
                 script {
@@ -101,7 +101,7 @@ stage('Deploiement en staging'){
   stage('Deploiement en prod'){
         environment
         {
-        KUBECONFIG = credentials("cinfig") // we retrieve  kubeconfig from secret file called config saved on jenkins
+        KUBECONFIG = credentials("config") // we retrieve  kubeconfig from secret file called config saved on jenkins
         }
             steps {
             // Create an Approval Button with a timeout of 15minutes.
